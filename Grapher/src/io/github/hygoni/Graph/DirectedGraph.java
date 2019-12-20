@@ -7,8 +7,8 @@ import java.util.Map;
 import java.util.Queue;
 
 public class DirectedGraph<T> {
-	Map<T, Map<T, Integer>> graph;
-	Map<T, T> prev;
+	private Map<T, Map<T, Integer>> graph;
+	private Map<T, T> prev;
 	public DirectedGraph() {
 		this.graph = new HashMap<>();
 	}
@@ -38,9 +38,7 @@ public class DirectedGraph<T> {
 		return graph.get(v).keySet().iterator();
 	}
 	
-	
 	/* Network Flow */
-	
 	public boolean bfs(T src, T dst) {
 		Map<T, Boolean> visited = new HashMap<>();
 		Queue<T> q = new LinkedList<T>();
