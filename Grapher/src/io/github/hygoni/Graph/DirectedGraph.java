@@ -3,6 +3,7 @@ package io.github.hygoni.Graph;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
@@ -12,6 +13,8 @@ public class DirectedGraph<T> {
 	public DirectedGraph() {
 		this.graph = new HashMap<>();
 	}
+	
+	/* basic functions of graph */
 	
 	public void addVertex(T v) {
 		graph.put(v, new HashMap<>());
@@ -38,7 +41,53 @@ public class DirectedGraph<T> {
 		return graph.get(v).keySet().iterator();
 	}
 	
+	/* TODO: bfs, dfs - using callback function */
+	
+	/* bfs, dfs - returns list of vertexes */
+	
+	public List<T> bfs(T start){
+		List<T> vertexList = new LinkedList<>();
+		Map<T, Boolean> visited = new HashMap<>();
+		Queue<T> q = new LinkedList<T>();
+		q.add(start);
+		
+		while(!q.isEmpty()) {
+			T u = q.poll();
+			vertexList.add(u);
+			Iterator<T> iter = this.getNeighborsIterator(u);
+			while(iter.hasNext()) {
+				T v = iter.next();
+				if(!visited.getOrDefault(v, false)) {
+					visited.put(v, true);
+					prev.put(v, u);
+					q.add(v);
+				}
+			}
+		}
+		
+		return vertexList;
+	}
+	
+	public List<T> dfs(T start){
+		Map<T, Boolean> visited = new HashMap<>();
+		List<T> vertexList = new LinkedList<T>();
+		return dfs(start, vertexList, visited);
+	}
+	
+	public List<T> dfs(T u, List<T> vertexList, Map<T, Boolean> visited){
+		visited.put(u, true);
+		Iterator<T> iter = this.getNeighborsIterator(u);
+		while(iter.hasNext()) {
+			T v = iter.next();
+			if(!visited.getOrDefault(v, false)) {
+				dfs(v, vertexList, visited);
+			}
+		}
+		return vertexList;
+	}
+	
 	/* Network Flow */
+	
 	public boolean bfs(T src, T dst) {
 		Map<T, Boolean> visited = new HashMap<>();
 		Queue<T> q = new LinkedList<T>();
