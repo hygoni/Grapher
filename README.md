@@ -7,13 +7,10 @@ the Grapher folder is an eclipse project. so you can simply import it.
 
 
 
-**TODO List** :
+**Implementation :**
 
-- implement bfs, dfs algorithm
-- optimize on bipartite matching problems
-- visualize the process of bfs, dfs, network flow algorithms
-
-
+- used nested hashmap to represent graph
+- can get max flow using ford-fulkerson algorithm 
 
 **Packages :**
 
@@ -23,8 +20,18 @@ the Grapher folder is an eclipse project. so you can simply import it.
 
 
 
-**Currently Not Suitable For Solving Bipartite Matching Problems**:
+**TODO List** :
 
-it's because of poor time complexity of Ford-Fulkerson. I'll improved it soon
+- implement bfs, dfs algorithm
 
-I'll add more functions on it!
+- optimize on bipartite matching problems
+
+- visualize the process of bfs, dfs, network flow algorithms
+
+  
+
+**Notice**
+
+Currently Not Suitable For Solving Bipartite Matching Problems:
+
+it's because of poor time complexity of Ford-Fulkerson. going to improve it soon
