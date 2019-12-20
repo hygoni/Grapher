@@ -7,9 +7,15 @@ the Grapher folder is an eclipse project. so you can simply import it.
 
 
 
-Directory Structure
+**TODO List** :
 
-packages in this lib :
+- implement bfs, dfs algorithm
+- optimize on bipartite matching problems
+- visualize the process of bfs, dfs, network flow algorithms
+
+
+
+**Packages :**
 
 [io.github.hygoni.Graph](https://github.com/hygoni/Grapher/tree/master/Grapher/src/io/github/hygoni/Graph) - It's an eclipse project of this library
 
