@@ -9,7 +9,7 @@ the Grapher folder is an eclipse project. so you can simply import it.
 
 Directory Structure
 
-[packages in this lib : ]()
+packages in this lib :
 
 [io.github.hygoni.Graph](https://github.com/hygoni/Grapher/tree/master/Grapher/src/io/github/hygoni/Graph) - It's an eclipse project of this library
 
